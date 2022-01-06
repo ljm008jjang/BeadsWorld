@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6945511594663518734}
   - component: {fileID: 1023600445}
   - component: {fileID: 1023600443}
-  - component: {fileID: 7903095472524710730}
   m_Layer: 0
   m_Name: PurpleSquare
   m_TagString: Untagged
@@ -123,19 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f479406d273d5a4286e5b77085d9087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
---- !u!111 &7903095472524710730
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 454556166085268840}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  index: {x: 0, y: 0}

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4869077694825314612}
   - component: {fileID: 545134030}
   - component: {fileID: 545134029}
-  - component: {fileID: 2736191044168363358}
   m_Layer: 0
   m_Name: OrangeSquare
   m_TagString: Untagged
@@ -123,19 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18311bfe50b4a6f48a59be77b2638afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
---- !u!111 &2736191044168363358
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5191633576565301347}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  index: {x: 0, y: 0}

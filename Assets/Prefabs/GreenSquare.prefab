@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8516071482962342389}
   - component: {fileID: 1397342739}
   - component: {fileID: 1397342736}
-  - component: {fileID: 1397342740}
   m_Layer: 0
   m_Name: GreenSquare
   m_TagString: Untagged
@@ -123,19 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36cf299c5da1d0e45945af4cc7f367f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
---- !u!111 &1397342740
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3301237065646939585}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  index: {x: 0, y: 0}

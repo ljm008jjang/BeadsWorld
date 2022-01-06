@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1912256694829720357}
   - component: {fileID: 335218888}
   - component: {fileID: 335218887}
-  - component: {fileID: 1977413462126214779}
   m_Layer: 0
   m_Name: YellowSquare
   m_TagString: Untagged
@@ -123,19 +122,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd15ea87dfb087e428ef8ba821e4aecd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
---- !u!111 &1977413462126214779
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8068350424786505239}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  index: {x: 0, y: 0}
