@@ -176,7 +176,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (3)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -242,7 +242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (4)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -339,7 +339,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (1)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -405,7 +405,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (7)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -515,7 +515,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (8)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -581,7 +581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (2)
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_IsActive
@@ -647,7 +647,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (7)
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_IsActive
@@ -669,7 +669,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (7)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -779,11 +779,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: G
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
@@ -792,45 +788,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1688652441439733744, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
   m_PrefabInstance: {fileID: 288063948}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &288063950 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
-  m_PrefabInstance: {fileID: 288063948}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &288063951
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288063950}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 8307ba64bcd7f0f45b080fbca0f6f599, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 1
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &288063952
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288063950}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &387557820
 GameObject:
   m_ObjectHideFlags: 0
@@ -880,7 +837,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (3)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -990,7 +947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (1)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -1068,7 +1025,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (8)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -1134,7 +1091,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (9)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -1244,7 +1201,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (3)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -1281,21 +1238,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &606894437
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 606894435}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &611672695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1305,7 +1247,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (5)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -1411,7 +1353,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (2)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -1561,11 +1503,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: O
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
@@ -1627,7 +1565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (5)
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_IsActive
@@ -1693,7 +1631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (3)
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_IsActive
@@ -1759,7 +1697,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (2)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -1796,21 +1734,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &928189135
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 928189133}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &937601840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1820,7 +1743,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (1)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -1886,7 +1809,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (1)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -2062,7 +1985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (2)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -2084,7 +2007,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (8)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -2194,7 +2117,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (9)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -2216,7 +2139,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (3)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -2326,7 +2249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (6)
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_IsActive
@@ -2348,7 +2271,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (6)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -2405,26 +2328,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3774779808947371560, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
   m_PrefabInstance: {fileID: 1297618689}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1328461959 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
-  m_PrefabInstance: {fileID: 6189599440198025951}
-  m_PrefabAsset: {fileID: 0}
---- !u!111 &1328461960
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1328461959}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1382848243
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2434,7 +2337,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (6)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -2540,7 +2443,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (4)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -2650,7 +2553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (9)
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_IsActive
@@ -2672,7 +2575,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (9)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -2900,7 +2803,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (9)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -2937,21 +2840,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1540881305
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540881303}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1636280964
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2961,7 +2849,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (6)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 8995693542580972852, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_RootOrder
@@ -3023,7 +2911,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (8)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -3089,7 +2977,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (2)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -3243,7 +3131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (8)
+      value: Y
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
@@ -3305,7 +3193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (7)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -3327,7 +3215,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (4)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -3437,7 +3325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (1)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -3474,21 +3362,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1741144399
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1741144397}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1743626626
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3542,7 +3415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (5)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -3579,21 +3452,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1743626630
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743626628}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &1769879102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3603,7 +3461,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (9)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -3713,7 +3571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (8)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -3750,21 +3608,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &1783618279
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783618277}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &1828683176
 GameObject:
   m_ObjectHideFlags: 0
@@ -3898,7 +3741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (1)
+      value: Y
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_IsActive
@@ -3964,7 +3807,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare (5)
+      value: O
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_IsActive
@@ -4069,7 +3912,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (4)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -4135,7 +3978,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (5)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 2583889821162588607, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_RootOrder
@@ -4241,7 +4084,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare (4)
+      value: Y
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
@@ -4259,11 +4102,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 3774779808947371560, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_RootOrder
@@ -4325,7 +4164,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare (7)
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_IsActive
@@ -4491,7 +4330,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare (3)
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_IsActive
@@ -4601,7 +4440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (7)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -4638,21 +4477,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &2023984044
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023984042}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &2034677816
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4706,7 +4530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare (6)
+      value: G
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_IsActive
@@ -4743,21 +4567,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &2034677820
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2034677818}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: ad2facd783424ba4bbe647aab48c63f6, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1001 &2052873114
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4767,7 +4576,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: BlueSquare  (5)
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_IsActive
@@ -4877,9 +4686,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3301237065646939585, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
       propertyPath: m_Name
-      value: GreenSquare
+      value: G
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1397342740, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
 --- !u!4 &2128499991 stripped
 Transform:
@@ -4895,7 +4705,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_Name
-      value: 'BlueSquare '
+      value: B
       objectReference: {fileID: 0}
     - target: {fileID: 8995693542580972852, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
       propertyPath: m_RootOrder
@@ -4957,7 +4767,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 454556166085268840, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_Name
-      value: PurpleSquare
+      value: P
       objectReference: {fileID: 0}
     - target: {fileID: 3774779808947371560, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
       propertyPath: m_RootOrder
@@ -5019,7 +4829,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1829807208817578894, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_Name
-      value: RedSquare
+      value: R
       objectReference: {fileID: 0}
     - target: {fileID: 2583889821162588607, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
       propertyPath: m_RootOrder
@@ -5120,11 +4930,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
       propertyPath: m_Name
-      value: YellowSquare
-      objectReference: {fileID: 0}
-    - target: {fileID: 8068350424786505239, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      value: Y
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
@@ -5191,7 +4997,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5191633576565301347, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
       propertyPath: m_Name
-      value: OrangeSquare
+      value: O
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
