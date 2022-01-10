@@ -16,6 +16,8 @@ public class BeadsPocket : MonoBehaviour
     public List<BeadOrange> beadOranges;
     public List<BeadYellow> beadYellows;
 
+    public bool isMoveEnd = true;
+
     private void Awake()
     {
         beadMatrix = new Bead[7,7];
@@ -41,7 +43,7 @@ public class BeadsPocket : MonoBehaviour
     private void Start()
     {
         MakeMapFirst();
-        printMatrix();
+        //printMatrix();
         //Debug.Log(beadMatrix[1,1]);
     }
 
@@ -84,6 +86,7 @@ public class BeadsPocket : MonoBehaviour
                 {
                     if (!tmpList[k].gameObject.activeInHierarchy)
                     {
+                        /*
                         if (k.Equals(tmpList.Count - 1))
                         {
                             Bead bead = Instantiate(tmpList[0], this.transform);
@@ -91,12 +94,27 @@ public class BeadsPocket : MonoBehaviour
                             tmpList.Add(bead);
                             k++;
                         }
+                        */
                         tmpList[k].transform.position = new Vector3(-1.5f + 0.5f * i, -1.5f + 0.5f * j, 0);
                         tmpList[k].gameObject.SetActive(true);
 
                         beadMatrix[i, j] = tmpList[k];
                         beadMatrix[i, j].index = new Vector2Int(i, j);
                         break;
+                    }
+                    else if (k == tmpList.Count - 1)
+                    {
+                        Bead bead = new Bead();
+
+                        bead = Instantiate(tmpList[0], this.transform);
+
+                        tmpList.Add(bead);
+                        k++;
+                        tmpList[k].transform.position = new Vector3(-1.5f + 0.5f * i, -1.5f + 0.5f * j, 0);
+                        tmpList[k].gameObject.SetActive(true);
+
+                        beadMatrix[i, j] = tmpList[k];
+                        beadMatrix[i, j].index = new Vector2Int(i, j);
                     }
                 }
             }
@@ -132,10 +150,12 @@ public class BeadsPocket : MonoBehaviour
                 break;
         }
         Bead bead = new Bead();
+        //Debug.Log(bead);
         for (int k = 0; k < tmpList.Count; k++)
         {
             if (!tmpList[k].gameObject.activeInHierarchy)
             {
+                /*
                 if (k.Equals(tmpList.Count - 1))
                 {
                     bead = Instantiate(tmpList[0], this.transform);
@@ -143,14 +163,41 @@ public class BeadsPocket : MonoBehaviour
                     tmpList.Add(bead);
                     k++;
                 }
+                */
                 tmpList[k].transform.position = pos;
                 tmpList[k].gameObject.SetActive(true);
 
                 beadMatrix[i, j] = tmpList[k];
-                beadMatrix[i, j].index = new Vector2Int(i, j);
+                beadMatrix[i, j].index.x = i;// = new Vector2Int(i, j);
+                beadMatrix[i, j].index.y = j;
                 break;
             }
+            
+            else if (k == tmpList.Count - 1)
+            {
+                bead = Instantiate(tmpList[0], this.transform);
+
+                bead.transform.position = pos;
+                bead.gameObject.SetActive(true);
+                    
+
+                /*
+                tmpList.Add(bead);
+                k++;
+                tmpList[k].transform.position = pos;
+                tmpList[k].gameObject.SetActive(true);
+                beadMatrix[i, j] = tmpList[k];
+                */
+                bead.index.x = i;
+                bead.index.y = j;
+                beadMatrix[i, j] = bead;
+                //beadMatrix[i, j].index = new Vector2Int(i, j);
+            }
+            
         }
+
+        
+
 
         return bead;
     }
@@ -195,10 +242,11 @@ public class BeadsPocket : MonoBehaviour
                             //beadMatrix[k, bead.index.y] = null;
                         }
 
-                       
+                        
 
 
                         isDo = true;
+                        i = 6;//2중배열 컷
                         break;
                     }
                 }
@@ -218,6 +266,7 @@ public class BeadsPocket : MonoBehaviour
 
 
                     isDo = true;
+                    i = 6;//2중배열 컷
                     break;
                 }
                 else
@@ -228,7 +277,7 @@ public class BeadsPocket : MonoBehaviour
             }
 
         }
-        printMatrix();
+        //printMatrix();
         if (isDo == false)
         {
 
@@ -237,7 +286,10 @@ public class BeadsPocket : MonoBehaviour
                 int ctmp = 0;
                 for (int j = i + 1; j < 7; j++)
                 {
-                    printMatrix();
+                    //printMatrix();
+                   // Debug.Log("1" + beadMatrix[bead.index.x, i].GetComponent<Bead>().GetType());
+                   // Debug.Log("2" + beadMatrix[bead.index.x, j].GetComponent<Bead>().GetType());
+
                     if (beadMatrix[bead.index.x,i].GetComponent<Bead>().GetType() == beadMatrix[bead.index.x,j].GetComponent<Bead>().GetType())
                     {
 
@@ -256,6 +308,7 @@ public class BeadsPocket : MonoBehaviour
                             StartCoroutine(MoveDown(beadMatrix[bead.index.x, j]));
 
                             isDo = true;
+                            i = 6;
                             break;
                         }
                     }
@@ -267,7 +320,7 @@ public class BeadsPocket : MonoBehaviour
 
                             beadMatrix[bead.index.x, k].gameObject.SetActive(false);
 
-                            if (k != j)
+                            if (k != j-1)
                             {
                                 beadMatrix[bead.index.x, k] = null;
                             }
@@ -276,6 +329,7 @@ public class BeadsPocket : MonoBehaviour
 
 
                         isDo = true;
+                        i = 6;
                         break;
                     }
                     else
@@ -304,42 +358,69 @@ public class BeadsPocket : MonoBehaviour
 
     IEnumerator MoveDown(Bead bead)
     {
+        isMoveEnd = false;
         //bead.gameObject.SetActive(false);//없앤 후 위에것을 아래로
         //인덱스 정리하기
-        yield return new WaitForSeconds(0.1f);
+        //yield return new WaitForSeconds(0.1f);
         //Debug.Log(beadMatrix[bead.index.x, bead.index.y]);
+        //Debug.Log(bead);
         beadMatrix[bead.index.x, bead.index.y] = null;
-        Debug.Log(bead.index.x);
+        Debug.Log(bead.index.y);
         int tmp = 0;
-        for (int i = bead.index.y; i >= 0; i--)//업앤것의 yindex부터 0까지 탐색함
+        bool isFirstCheck = false;
+        for (int i = 0; i < 7; i++)//업앤것의 yindex부터 0까지 탐색함
         {
-            if (beadMatrix[bead.index.x, i] != null)
+            if(beadMatrix[bead.index.x, i] == null)
             {
-                break;
+                isFirstCheck = true;
             }
-            else
-            {
-                tmp++;
-            }
-        }
 
-        for(int i = bead.index.y+1; i < 7; i++)// i 는 옮길 인덱스
+            if (isFirstCheck)
+            {
+                if (beadMatrix[bead.index.x, i] != null)
+                {
+                    break;
+                }
+                else
+                {
+                    tmp++;
+                }
+            }
+           
+        }
+        Debug.Log(bead.index.y);
+        for (int i = bead.index.y+1; i < 7; i++)// i 는 옮길 인덱스
         {
            
             beadMatrix[bead.index.x, i - tmp] = beadMatrix[bead.index.x, i];
             beadMatrix[bead.index.x, i] = null;
             beadMatrix[bead.index.x, i - tmp].index.y = i - tmp;
         }
-
-        for(int i = 7 - tmp; i < 7; i++)
+        Debug.Log(bead.index.y);
+        for (int i = 7 - tmp; i < 7; i++)
         {
-            beadMatrix[bead.index.x, i] = MakeBead(bead.index.x, i, new Vector2(bead.transform.position.x, 1.5f + 0.5f * (i-7+tmp)));
+            //beadMatrix[bead.index.x, i] = MakeBead(bead.index.x, i, new Vector2(bead.transform.position.x, 2.0f + 0.5f * (i-7+tmp)));
+            MakeBead(bead.index.x, i, new Vector2(bead.transform.position.x, 2.0f + 0.5f * (i - 7 + tmp)));
+            //makebead에서 무언가 잘못됨
+            //Debug.Log(beadMatrix[bead.index.x, i]);
         }
-
+        Debug.Log(bead.index.y);
         //인덱스는 모두 완성됨
 
-
-        Vector3 destinationPos = beadMatrix[bead.index.x,bead.index.y-tmp].transform.position;
+        Vector3 destinationPos;
+        if (bead.index.y - tmp > -1)
+        {
+            destinationPos = beadMatrix[bead.index.x, bead.index.y - tmp].transform.position + Vector3.up * 0.5f;
+            Debug.Log("1" + beadMatrix[bead.index.x, bead.index.y - tmp].transform.position + " "+ bead.index.y +" " + tmp);
+        }
+        else
+        {
+            destinationPos = new Vector3(-1.5f + 0.5f * bead.index.x, -1.5f, 0f);// beadMatrix[bead.index.x, bead.index.y].transform.position + Vector3.up * 0.5f;
+            Debug.Log("2" + bead.index.y + " " + tmp);
+        }
+            
+        //Debug.Log(destinationPos);
+        //Debug.Log(destinationPos);
         /*
         for(int i = bead.index.y; i >= 0; i--)//업앤것의 yindex부터 0까지 탐색함
         {
@@ -360,24 +441,52 @@ public class BeadsPocket : MonoBehaviour
             }
         }
         */
+
+        printMatrix();
+        /*
+        O
+        O
+        X = bead
+        X
+        X
+        O
+        O
+        tmp = 3
+         */
+        float time = 0f;
+        
         while (true)
         {
-            for(int i = bead.index.y-tmp; i < 7; i++)
+            //Debug.Log("실행");
+            for(int i = bead.index.y-tmp+1; i < 7; i++)
             {
-                beadMatrix[bead.index.x,i].transform.position = Vector2.Lerp(beadMatrix[bead.index.x, i].transform.position, destinationPos + Vector3.up * 0.5f * (i - bead.index.y + tmp), Time.deltaTime * 3);
+                //Debug.Log(i);
+                beadMatrix[bead.index.x,i].transform.position = Vector3.Lerp(beadMatrix[bead.index.x, i].transform.position, destinationPos + Vector3.up * 0.5f * (i - bead.index.y + tmp - 1), Time.deltaTime * 10);
             }
-
-            if(beadMatrix[bead.index.x, bead.index.y].transform.position.y - destinationPos.y > 0.0001f)
+            time += Time.deltaTime;
+            /*
+            if(beadMatrix[bead.index.x, bead.index.y - tmp + 1].transform.position.y - destinationPos.y < 0.0001f)
             {
-                for (int i = bead.index.y-tmp; i < 7; i++)
+                for (int i = bead.index.y-tmp+1; i < 7; i++)
                 {
-                    beadMatrix[bead.index.x, i].transform.position = destinationPos + Vector3.up * 0.5f * (i - bead.index.y + tmp);
+                    beadMatrix[bead.index.x, i].transform.position = destinationPos + Vector3.up * 0.5f * (i - bead.index.y + tmp - 1);
                 }
                 break;
             }
+            */
 
+            if (time > 1f)
+            {
+                for (int i = bead.index.y - tmp + 1; i < 7; i++)
+                {
+                    beadMatrix[bead.index.x, i].transform.position = destinationPos + Vector3.up * 0.5f * (i - bead.index.y + tmp - 1);
+                }
+                //Debug.Log("끝");
+                break;
+            }
             yield return null;
         }
+        isMoveEnd = true;
     }
 
     /*

@@ -26,7 +26,7 @@ public class Bead : MonoBehaviour
     private void OnMouseUp()
     {
         
-        if(isClicked == true)
+        if(isClicked == true && beadsPocket.isMoveEnd)
         {
             Spos = transform.position;
             //Debug.Log("Spos : "+Spos);
