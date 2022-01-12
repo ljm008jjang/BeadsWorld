@@ -1009,7 +1009,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6df3a7929eea95d4bb6ec785a6d83388, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Blue: {fileID: 2568402449353424437, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
+  NewBead:
+  - {fileID: 2018071803, guid: 3f24fe96ce0ee504d87a39a9b0298ce8, type: 3}
+  - {fileID: 1397342736, guid: c914e9fc4fc322c488cc313c00baa089, type: 3}
+  - {fileID: 545134029, guid: 3c9eda5c32fdcdb4e905b52fc893fd9c, type: 3}
+  - {fileID: 1023600443, guid: a12a41fb4e588344fac7a890b1129b27, type: 3}
+  - {fileID: 335218887, guid: cb997091e39548b4bb88e49a9b3ae936, type: 3}
+  - {fileID: 131689019, guid: 9381560f81bea894ea89fc00771a9ae3, type: 3}
   beadBlues: []
   beadGreens: []
   beadPurples: []
