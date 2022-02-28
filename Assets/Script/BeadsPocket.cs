@@ -5,6 +5,16 @@ using UnityEngine;
 
 public class BeadsPocket : MonoBehaviour
 {
+    private static BeadsPocket instance;
+
+    public static BeadsPocket Instance
+    {
+        get
+        {
+            return instance;
+        }
+    }
+
     //public List<BeadBlue> beadBlues;
     public Bead[] NewBead;
     public Bead[,] beadMatrix;
@@ -18,8 +28,12 @@ public class BeadsPocket : MonoBehaviour
 
     public bool isMoveEnd = true;
 
+    Coroutine[] coroutines;
+
     private void Awake()
     {
+        instance = this;
+
         beadMatrix = new Bead[7,7];
         //beadBlues = Blue.GetComponentsInChildren<BeadBlue>();
         beadBlues = new List<BeadBlue>(GetComponentsInChildren<BeadBlue>());
@@ -38,12 +52,19 @@ public class BeadsPocket : MonoBehaviour
             beadYellows[i].gameObject.SetActive(false);
             beadReds[i].gameObject.SetActive(false);
         }
+
+        coroutines = new Coroutine[7];
+        for(int i = 0; i < coroutines.Length; i++)
+        {
+            coroutines[i] = null;
+        }
     }
 
     private void Start()
     {
         MakeMapFirst();
-        StartCoroutine(CheckWhole());
+        //StartCoroutine(CheckWhole());
+        //StartCoroutine(SubCheckWhole());
         //printMatrix();
         //Debug.Log(beadMatrix[1,1]);
     }
@@ -140,98 +161,37 @@ public class BeadsPocket : MonoBehaviour
         beadMatrix[b.index.x, b.index.y] = b;
     }
 
-    public bool CheckVerHorFunc(Bead bead, Bead swapBead)
+    public bool SubCheckVerHorFunc(Bead bead, Bead swapBead)
     {
         bool isDo = false;
 
-
-        for (int i = 0; i < 5; i++)//왼족에서 오른쪽으로 체크
+        for(int l=0; l<7; l++)//0 ~ 6번까지 체크
         {
-            int ctmp = 0;
-            for (int j = i + 1; j < 7; j++)
-            {
-                //가로 체크 먼저
-                if (beadMatrix[i,bead.index.y].GetComponent<Bead>().GetType() == beadMatrix[j,bead.index.y].GetComponent<Bead>().GetType())//같은 클래스면 진행
-                {
-                    ctmp++;
-                    if (j == 6 && ctmp > 1)//j가 마지막이면 다음 인덱스 존재x이므로
-                    {
-                        
-                        for (int k = i; k <= j; k++)//k==j???
-                        {
-                            beadMatrix[k, bead.index.y].gameObject.SetActive(false);
-                            StartCoroutine(MoveDown(beadMatrix[k, bead.index.y]));
-                            //beadMatrix[k, bead.index.y] = null;
-                            //beadMatrix[k, bead.index.y] = null;
-                        }
-
-                        
-
-
-                        isDo = true;
-                        i = 6;//2중배열 컷
-                        break;
-                    }
-                }
-                else if (ctmp > 1)//다른데 ctmp가 2 이상이면
-                {
-                   
-                    for (int k = i; k < j; k++)
-                    {
-                        beadMatrix[k, bead.index.y].gameObject.SetActive(false);
-                        StartCoroutine(MoveDown(beadMatrix[k, bead.index.y]));//인덱스도 바꿔야하는데
-                        //beadMatrix[k, bead.index.y] = null;
-                        //beadMatrix[k, bead.index.y] = null;
-                        //checkHor[k].collider.gameObject.SetActive(false);
-                        //beadsPocket.StartCoroutine(beadsPocket.MoveDown_2(checkHor_2[k].collider.GetComponent<Bead>()));
-                    }
-
-
-
-                    isDo = true;
-                    i = 6;//2중배열 컷
-                    break;
-                }
-                else
-                {
-                    i += ctmp;
-                    break;
-                }
-            }
-
-        }
-        //printMatrix();
-        if (isDo == false)
-        {
-
-            for (int i = 0; i < 5; i++)//아래에서 위로 체크
+            for (int i = 0; i < 5; i++)
             {
                 int ctmp = 0;
                 for (int j = i + 1; j < 7; j++)
                 {
-                    //printMatrix();
-                   // Debug.Log("1" + beadMatrix[bead.index.x, i].GetComponent<Bead>().GetType());
-                   // Debug.Log("2" + beadMatrix[bead.index.x, j].GetComponent<Bead>().GetType());
-
-                    if (beadMatrix[bead.index.x,i].GetComponent<Bead>().GetType() == beadMatrix[bead.index.x,j].GetComponent<Bead>().GetType())
+                    //가로 체크 먼저
+                    if (beadMatrix[i, l].GetComponent<Bead>().GetType() == beadMatrix[j, l].GetComponent<Bead>().GetType())//같은 클래스면 진행
                     {
-
                         ctmp++;
                         if (j == 6 && ctmp > 1)//j가 마지막이면 다음 인덱스 존재x이므로
                         {
 
                             for (int k = i; k <= j; k++)//k==j???
                             {
-                                beadMatrix[bead.index.x, k].gameObject.SetActive(false);
-                                if(k != j)
-                                {
-                                    beadMatrix[bead.index.x, k] = null;
-                                }
+                                beadMatrix[k, l].gameObject.SetActive(false);
+                                beadMatrix[k, l] = null;
                             }
-                            StartCoroutine(MoveDown(beadMatrix[bead.index.x, j]));
 
+
+                            i += ctmp;
                             isDo = true;
-                            i = 6;
+                            /*
+
+                            i = 6;//2중배열 컷
+                            */
                             break;
                         }
                     }
@@ -240,19 +200,15 @@ public class BeadsPocket : MonoBehaviour
 
                         for (int k = i; k < j; k++)
                         {
-
-                            beadMatrix[bead.index.x, k].gameObject.SetActive(false);
-
-                            if (k != j-1)
-                            {
-                                beadMatrix[bead.index.x, k] = null;
-                            }
+                            beadMatrix[k, l].gameObject.SetActive(false);
+                            beadMatrix[k, l] = null;
                         }
-                        StartCoroutine(MoveDown(beadMatrix[bead.index.x, j-1]));
 
-
+                        i += ctmp;
                         isDo = true;
-                        i = 6;
+                        /*
+                        i = 6;//2중배열 컷
+                        */
                         break;
                     }
                     else
@@ -261,123 +217,244 @@ public class BeadsPocket : MonoBehaviour
                         break;
                     }
                 }
+            }
+        }
+
+
+
+        for (int l = 0; l < 7; l++)//0 ~ 6번까지 체크
+        {
+            for (int i = 0; i < 5; i++)//아래에서 위로 체크
+            {
+                int ctmp = 0;
+                for (int j = i + 1; j < 7; j++)
+                {
+                    if(beadMatrix[l, i] != null && beadMatrix[l, j] != null)
+                    {
+                        if (beadMatrix[l, i].GetComponent<Bead>().GetType() == beadMatrix[l, j].GetComponent<Bead>().GetType())
+                        {
+
+                            ctmp++;
+                            if (j == 6 && ctmp > 1)//j가 마지막이면 다음 인덱스 존재x이므로
+                            {
+
+                                for (int k = i; k <= j; k++)//k==j???
+                                {
+                                    beadMatrix[l, k].gameObject.SetActive(false);
+
+                                    beadMatrix[l, k] = null;
+                                }
+
+                                isDo = true;
+                                i += ctmp;
+                                //i = 6;
+                                break;
+                            }
+                        }
+                        else if (ctmp > 1)//다른데 ctmp가 2 이상이면
+                        {
+
+                            for (int k = i; k < j; k++)
+                            {
+
+                                beadMatrix[l, k].gameObject.SetActive(false);
+
+                                beadMatrix[l, k] = null;
+                            }
+
+
+                            isDo = true;
+                            i += ctmp;
+                            //i = 6;
+                            break;
+                        }
+                        else
+                        {
+                            i += ctmp;
+                            break;
+                        }
+                    }
+                    else
+                    {
+                        i = 6;
+                        break;
+                        
+                    }
+
+                }
 
             }
+
         }
 
         if (isDo == true)
         {
-
+            AllMoveDown();
             //블록 아래로!
         }
-        else if(swapBead != null)
+        else if (swapBead != null)
         {
             SwapBead(bead, swapBead);
         }
         return isDo;
     }
 
-    IEnumerator MoveDown(Bead bead)
+    void AllMoveDown()
     {
         isMoveEnd = false;
-        //bead.gameObject.SetActive(false);//없앤 후 위에것을 아래로
-        //인덱스 정리하기
-        //yield return new WaitForSeconds(0.1f);
-        //Debug.Log(beadMatrix[bead.index.x, bead.index.y]);
-        //Debug.Log(bead);
-        beadMatrix[bead.index.x, bead.index.y] = null;
 
-        int indexx = bead.index.x;
-        int indexy = bead.index.y;
-        int tmp = 0;
-        bool isFirstCheck = false;
-        for (int i = 0; i < 7; i++)//업앤것의 yindex부터 0까지 탐색함
+        int[] additionNum = new int[7];
+
+        bool[] isMoveDown = new bool[7];
+
+        Bead[] moveDownBead = new Bead[7];
+
+        for (int i = 0; i < 7; i++)
         {
-            if(beadMatrix[bead.index.x, i] == null)
+            for (int j = 6; j >= 0; j--)//위에서 아래로
             {
-                isFirstCheck = true;
-            }
-
-            if (isFirstCheck)
-            {
-                if (beadMatrix[bead.index.x, i] != null)
+                if (beadMatrix[i, j] == null)
                 {
+                    for(int k = j + 1; k < 7; k++)
+                    {
+                        beadMatrix[i, k - 1] = beadMatrix[i, k];
+                        beadMatrix[i, k - 1].index.x = i;
+                        beadMatrix[i, k - 1].index.y = k-1;
+                    }
+
+                    
+
+                    additionNum[i]++;
+
+                    MakeBead(i, 6, new Vector2(-1.5f + 0.5f * i, 1.5f + 0.5f * additionNum[i]));
+
+                    moveDownBead[i] = beadMatrix[i, j];
+                }
+            }
+        }
+
+        for (int i = 0; i < 7; i++)
+        {
+            if(moveDownBead[i] != null)
+            {
+                //moveDownBead[i].DoMoveDown();
+                coroutines[i] = StartCoroutine(CoMoDo(moveDownBead[i]));
+                
+                
+            }
+        }
+
+        StartCoroutine(stfu());
+
+        //Invoke("stfu", 1.1f);
+
+        /*
+        for(int i = 0; i < 7; i++)
+        {
+            for(int j = 0; j < 7; j++)
+            {
+                if(beadMatrix[i,j] == null)
+                {
+                    int tmpj = j;
+                    for(int k=j+1; k<7; k++)
+                    {
+
+                        if(beadMatrix[i,k] != null || k == 6)
+                        {
+                            //아래로 내리고 위에 생성
+
+                            for(int l = k; l < 7; l++)
+                            {
+                                Debug.Log(tmpj+" " + l);
+                                beadMatrix[i, tmpj] = beadMatrix[i, l];
+                                tmpj++;
+                            }
+
+                            for(int l = j; l < 7; l++)
+                            MakeBead(i, l, new Vector2((float)(-1.5 + 0.5f * i), -1.5f + 0.5f * l));
+
+                        }
+                    }
                     break;
-                }
-                else
-                {
-                    tmp++;
+
                 }
             }
-           
         }
+        */
+    }
 
-        for (int i = bead.index.y+1; i < 7; i++)// i 는 옮길 인덱스
-        {
-           
-            beadMatrix[bead.index.x, i - tmp] = beadMatrix[bead.index.x, i];
-            beadMatrix[bead.index.x, i] = null;
-            beadMatrix[bead.index.x, i - tmp].index.y = i - tmp;
-        }
-
-        for (int i = 7 - tmp; i < 7; i++)
-        {
-            //beadMatrix[bead.index.x, i] = MakeBead(bead.index.x, i, new Vector2(bead.transform.position.x, 2.0f + 0.5f * (i-7+tmp)));
-            MakeBead(indexx, i, new Vector2(bead.transform.position.x, 2.0f + 0.5f * (i - 7 + tmp)));
-            //makebead에서 무언가 잘못됨
-            //makebead를 통해 active false인 bead가 선택되어 인덱스가 바뀌게되는듯 어떻게 해결하지?
-            //Debug.Log(beadMatrix[bead.index.x, i]);
-        }
-
-        //인덱스는 모두 완성됨
-
-        Vector3 destinationPos;
-        if (indexy - tmp > -1)
-        {
-            destinationPos = beadMatrix[indexx, indexy - tmp].transform.position + Vector3.up * 0.5f;
-            Debug.Log("1" + beadMatrix[indexx, indexy - tmp].transform.position + " "+ indexy + " " + tmp);
-        }
-        else
-        {
-            destinationPos = new Vector3(-1.5f + 0.5f * indexx, -1.5f, 0f);// beadMatrix[bead.index.x, bead.index.y].transform.position + Vector3.up * 0.5f;
-            Debug.Log("2" + indexy + " " + tmp);
-        }
-            
-
-
-        //printMatrix();
-
-        float time = 0f;
-        
+    IEnumerator stfu()
+    {
+        bool isAllEnd = false;
         while (true)
         {
-            //Debug.Log("실행");
-            for(int i = indexy - tmp+1; i < 7; i++)
+            int tmp = 0;
+            for(int i = 0; i < coroutines.Length; i++)
             {
-                //Debug.Log(i);
-                beadMatrix[indexx,i].transform.position = Vector3.Lerp(beadMatrix[indexx, i].transform.position, destinationPos + Vector3.up * 0.5f * (i - indexy + tmp - 1), Time.deltaTime * 5);
-            }
-            time += Time.deltaTime;
-
-            if (time > 1f)
-            {
-                for (int i = indexy - tmp + 1; i < 7; i++)
+                //Debug.Log(coroutines[i]);
+                if(coroutines[i] == null)
                 {
-                    beadMatrix[indexx, i].transform.position = destinationPos + Vector3.up * 0.5f * (i - indexy + tmp - 1);
+                    tmp++;
+                    
                 }
-                //Debug.Log("끝");
+
+            }
+
+            if (tmp == coroutines.Length)
+            {
+                isAllEnd = true;
+            }
+
+            if (isAllEnd)
+            {
+                isMoveEnd = true;
+
+                SubCheckWhole();
+
                 break;
             }
             yield return null;
         }
-        isMoveEnd = true;
-
-        //StartCoroutine(CheckWhole());
     }
 
-    /*
-     d
-     */
+    IEnumerator CoMoDo(Bead bead)
+    {
+        Vector3 targetPos;
+
+        targetPos = new Vector2(-1.5f + 0.5f * bead.index.x, -1.5f + 0.5f * bead.index.y);
+
+        float time = 0;
+
+        while (true)
+        {
+            for (int j = bead.index.y; j < 7; j++)
+            {
+                Bead doBead = beadMatrix[bead.index.x, j];
+                doBead.transform.position = Vector3.Lerp(doBead.transform.position, targetPos + Vector3.up * 0.5f * (j - bead.index.y), Time.deltaTime * 5);
+            }
+            //Debug.Log("a");
+            time += Time.deltaTime;
+
+            if (time > 1f)
+            {
+                for (int i = bead.index.y; i < 7; i++)
+                {
+                    Bead doBead = beadMatrix[bead.index.x, i];
+                    //beadMatrix[indexx, i].transform.position = destinationPos + Vector3.up * 0.5f * (i - indexy + tmp - 1);
+                    doBead.transform.position = targetPos + Vector3.up * 0.5f * (i - bead.index.y);
+                }
+                coroutines[bead.index.x] = null;
+                //Debug.Log("끝");
+                break;
+            }
+
+            yield return null;
+        }
+
+        //isMoveEnd = true;
+    }
+
+
 
     void printMatrix()
     {
@@ -390,21 +467,20 @@ public class BeadsPocket : MonoBehaviour
             beadMatrix[0, 0] + " " + beadMatrix[1, 0] + " " + beadMatrix[2, 0] + " " + beadMatrix[3, 0] + " " + beadMatrix[4, 0] + " " + beadMatrix[5, 0] + " " + beadMatrix[6, 0]);
     }
 
-    IEnumerator CheckWhole()
+
+    public void SubCheckWhole()
     {
         bool isDo = false;
 
         for (int i = 0; i < 7; i++)
         {
-            isDo = CheckVerHorFunc(beadMatrix[i, i], null);
+            isDo = SubCheckVerHorFunc(beadMatrix[i, i], null);
             if (isDo)
             {
-                yield return new WaitForSeconds(1f);
-                i = 0;
-                isDo = false;
+                break;
             }
         }
-        
+
         
     }
 

@@ -26,7 +26,7 @@ public class Bead : MonoBehaviour
     private void OnMouseUp()
     {
         
-        if(isClicked == true && beadsPocket.isMoveEnd)
+        if(isClicked == true && beadsPocket.isMoveEnd && PlayManager.Instance.isGameStart)
         {
             Spos = transform.position;
             //Debug.Log("Spos : "+Spos);
@@ -56,8 +56,9 @@ public class Bead : MonoBehaviour
             {
 
                 beadsPocket.SwapBead(this, swapBead);
-                beadsPocket.CheckVerHorFunc(this,swapBead);
-                //StartCoroutine(CheckVerHorFunc(hit));
+                beadsPocket.SubCheckVerHorFunc(this, swapBead);
+                //beadsPocket.CheckVerHorFunc(this,swapBead);
+
             }
           
 
@@ -65,6 +66,10 @@ public class Bead : MonoBehaviour
         }
 
     }
+  
+    public void good()
+    {
 
-    
+    }
+
 }
