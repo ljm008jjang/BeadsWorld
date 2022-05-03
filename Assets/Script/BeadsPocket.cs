@@ -25,11 +25,14 @@ public class BeadsPocket : MonoBehaviour
     public List<BeadRed> beadReds;
     public List<BeadOrange> beadOranges;
     public List<BeadYellow> beadYellows;
+    public List<BeadBomb> beadBombs;
+    public List<BeadArrow> beadArrows;
 
     public bool isMoveEnd = true;
 
     Coroutine[] coroutines;
 
+    public AudioSource audio;
     private void Awake()
     {
         instance = this;
@@ -42,16 +45,9 @@ public class BeadsPocket : MonoBehaviour
         beadPurples = new List<BeadPurple>(GetComponentsInChildren<BeadPurple>());
         beadYellows = new List<BeadYellow>(GetComponentsInChildren<BeadYellow>());
         beadReds = new List<BeadRed>(GetComponentsInChildren<BeadRed>());
+        beadBombs = new List<BeadBomb>(GetComponentsInChildren<BeadBomb>());
+        beadArrows = new List<BeadArrow>(GetComponentsInChildren<BeadArrow>());
 
-        for(int i = 0; i < 10; i++)
-        {
-            beadBlues[i].gameObject.SetActive(false);
-            beadGreens[i].gameObject.SetActive(false);
-            beadOranges[i].gameObject.SetActive(false);
-            beadPurples[i].gameObject.SetActive(false);
-            beadYellows[i].gameObject.SetActive(false);
-            beadReds[i].gameObject.SetActive(false);
-        }
 
         coroutines = new Coroutine[7];
         for(int i = 0; i < coroutines.Length; i++)
@@ -62,6 +58,18 @@ public class BeadsPocket : MonoBehaviour
 
     private void Start()
     {
+        for (int i = 0; i < 10; i++)
+        {
+            beadBlues[i].gameObject.SetActive(false);
+            beadGreens[i].gameObject.SetActive(false);
+            beadOranges[i].gameObject.SetActive(false);
+            beadPurples[i].gameObject.SetActive(false);
+            beadYellows[i].gameObject.SetActive(false);
+            beadReds[i].gameObject.SetActive(false);
+            beadBombs[i].gameObject.SetActive(false);
+            beadArrows[i].gameObject.SetActive(false);
+        }
+
         MakeMapFirst();
         //StartCoroutine(CheckWhole());
         //StartCoroutine(SubCheckWhole());
@@ -87,31 +95,47 @@ public class BeadsPocket : MonoBehaviour
 
     Bead MakeBead(int i, int j, Vector2 pos)
     {
-        int tmp = Random.Range(0, 6);
+
+        int tmp = Random.Range(0, 122);
+
+        bool tmp_3 = false;
 
         List<Bead> tmpList;
-
-        switch (tmp)
+        if(tmp < 20)
         {
-            case 0:
-                tmpList = new List<Bead>(beadBlues);
-                break;
-            case 1:
-                tmpList = new List<Bead>(beadGreens);
-                break;
-            case 2:
-                tmpList = new List<Bead>(beadOranges);
-                break;
-            case 3:
-                tmpList = new List<Bead>(beadPurples);
-                break;
-            case 4:
-                tmpList = new List<Bead>(beadYellows);
-                break;
-            default:
-                tmpList = new List<Bead>(beadReds);
-                break;
+            tmpList = new List<Bead>(beadBlues);
+
         }
+        else if(tmp < 40)
+        {
+            tmpList = new List<Bead>(beadGreens);
+        }
+        else if(tmp < 60)
+        {
+            tmpList = new List<Bead>(beadOranges);
+        }
+        else if (tmp < 80)
+        {
+            tmpList = new List<Bead>(beadReds);
+        }
+        else if (tmp < 100)
+        {
+            tmpList = new List<Bead>(beadPurples);
+        }
+        else if (tmp < 120)
+        {
+            tmpList = new List<Bead>(beadYellows);
+        }
+        else if(tmp == 121)
+        {
+            //Debug.Log(tmp);
+            tmpList = new List<Bead>(beadBombs);
+       
+        }else
+        {
+            tmpList = new List<Bead>(beadArrows);
+        }
+
         Bead bead = new Bead();
 
         for (int k = 0; k < tmpList.Count; k++)
@@ -119,13 +143,15 @@ public class BeadsPocket : MonoBehaviour
             if (!tmpList[k].gameObject.activeInHierarchy)
             {
 
-                tmpList[k].transform.position = pos;
+                //tmpList[k].transform.position = pos;
+                tmpList[k].MovePosition(pos);
                 beadMatrix[i, j] = tmpList[k];
+                
                 beadMatrix[i, j].index.x = i;// = new Vector2Int(i, j);
+
                 beadMatrix[i, j].index.y = j;
 
-                tmpList[k].gameObject.SetActive(true);
-                
+                beadMatrix[i, j].gameObject.SetActive(true);
 
                 
                
@@ -149,16 +175,29 @@ public class BeadsPocket : MonoBehaviour
 
     public void SwapBead(Bead a, Bead b)
     {
-        Vector2 tmp = a.transform.position;//포지션 바꾸고
-        a.transform.position = b.transform.position;
-        b.transform.position = tmp;
+        
+        Vector2 tmp = a.parentTransform.position;
+        a.MovePosition(b.parentTransform.position);
+        b.MovePosition(tmp);
+        
 
+        
         Vector2Int tmp_2 = a.index;//인덱스 바꾸고
         a.index = b.index;
         b.index = tmp_2;
 
         beadMatrix[a.index.x, a.index.y] = a; // 매트릭스 바꾸고
         beadMatrix[b.index.x, b.index.y] = b;
+        
+    }
+
+    public void OffBead(int k, int l)
+    {
+        beadMatrix[k, l].gameObject.SetActive(false);
+        beadMatrix[k, l] = null;
+        PlayManager.Instance.score++;
+        audio.Play();
+        //Debug.Log(PlayManager.Instance.score);
     }
 
     public bool SubCheckVerHorFunc(Bead bead, Bead swapBead)
@@ -181,8 +220,11 @@ public class BeadsPocket : MonoBehaviour
 
                             for (int k = i; k <= j; k++)//k==j???
                             {
+                                OffBead(k, l);
+                                /*
                                 beadMatrix[k, l].gameObject.SetActive(false);
                                 beadMatrix[k, l] = null;
+                                */
                             }
 
 
@@ -200,8 +242,11 @@ public class BeadsPocket : MonoBehaviour
 
                         for (int k = i; k < j; k++)
                         {
+                            OffBead(k, l);
+                            /*
                             beadMatrix[k, l].gameObject.SetActive(false);
                             beadMatrix[k, l] = null;
+                            */
                         }
 
                         i += ctmp;
@@ -240,9 +285,12 @@ public class BeadsPocket : MonoBehaviour
 
                                 for (int k = i; k <= j; k++)//k==j???
                                 {
+                                    OffBead(l, k);
+                                    /*
                                     beadMatrix[l, k].gameObject.SetActive(false);
 
                                     beadMatrix[l, k] = null;
+                                    */
                                 }
 
                                 isDo = true;
@@ -256,10 +304,12 @@ public class BeadsPocket : MonoBehaviour
 
                             for (int k = i; k < j; k++)
                             {
-
+                                OffBead(l, k);
+                                /*
                                 beadMatrix[l, k].gameObject.SetActive(false);
 
                                 beadMatrix[l, k] = null;
+                                */
                             }
 
 
@@ -289,6 +339,7 @@ public class BeadsPocket : MonoBehaviour
 
         if (isDo == true)
         {
+            PlayManager.Instance.UpdateScoreText();
             AllMoveDown();
             //블록 아래로!
         }
@@ -299,7 +350,7 @@ public class BeadsPocket : MonoBehaviour
         return isDo;
     }
 
-    void AllMoveDown()
+    public void AllMoveDown()
     {
         isMoveEnd = false;
 
@@ -430,18 +481,20 @@ public class BeadsPocket : MonoBehaviour
             for (int j = bead.index.y; j < 7; j++)
             {
                 Bead doBead = beadMatrix[bead.index.x, j];
-                doBead.transform.position = Vector3.Lerp(doBead.transform.position, targetPos + Vector3.up * 0.5f * (j - bead.index.y), Time.deltaTime * 5);
+                //doBead.transform.position = Vector3.Lerp(doBead.transform.position, targetPos + Vector3.up * 0.5f * (j - bead.index.y), Time.deltaTime * 5);
+                doBead.MovePosition(Vector3.Lerp(doBead.parentTransform.position, targetPos + Vector3.up * 0.5f * (j - bead.index.y), Time.deltaTime * 7));
             }
             //Debug.Log("a");
             time += Time.deltaTime;
 
-            if (time > 1f)
+            if (time > 0.6f)
             {
                 for (int i = bead.index.y; i < 7; i++)
                 {
                     Bead doBead = beadMatrix[bead.index.x, i];
                     //beadMatrix[indexx, i].transform.position = destinationPos + Vector3.up * 0.5f * (i - indexy + tmp - 1);
-                    doBead.transform.position = targetPos + Vector3.up * 0.5f * (i - bead.index.y);
+                    //doBead.transform.position = targetPos + Vector3.up * 0.5f * (i - bead.index.y);
+                    doBead.MovePosition(targetPos + Vector3.up * 0.5f * (i - bead.index.y));
                 }
                 coroutines[bead.index.x] = null;
                 //Debug.Log("끝");

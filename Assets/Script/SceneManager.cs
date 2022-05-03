@@ -33,5 +33,9 @@ public class SceneManager : MonoBehaviour
         }
 
         isMSEnd = true;
+
+
+        UIManager.Instance.UpdateBestScoreText();
+        //UIManager.Instance.bestScoreText.text = GameManager.Instance.bestScore.ToString();
     }
 }
